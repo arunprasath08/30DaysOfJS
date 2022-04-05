@@ -150,4 +150,90 @@ function check_o(company) {
 console.log('itCompanies array sorted as:',itCompanies.sort())
 
 //16 Reverse the array
+const itCompanies_cpy=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+console.log('itCompanies: ',itCompanies_cpy)
+const itCompanies_reverse=itCompanies_cpy.reverse()
+console.log(' reversed as: ',itCompanies_reverse)
 
+//17 slice first 3 companies
+const first3Comp=itCompanies.slice(0,3)
+console.log('First 3 companies: ',first3Comp)
+
+//18 slice last 3 companies
+const itCompanies_copy=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon','Deloitte','Cognizant']
+
+const last3comp=itCompanies_copy.slice(itCompanies_copy.length-3)
+console.log('Last 3 companies: ',last3comp)
+
+//19 Slice middle company/companies
+if (itCompanies_copy.length%2==0) {
+    let startidx=itCompanies_copy.length/2
+    console.log('if loop Start index:',startidx)
+    const midcomp=itCompanies_copy.slice(startidx-1,startidx+1)
+    console.log('Middle IT Companies:',midcomp)
+} else {
+    let startidx=Math.floor(itCompanies_copy.length/2)
+    console.log('else loop Start index:',startidx)
+    const midcomp=itCompanies_copy.slice(startidx,startidx+1)
+    console.log('Middle IT Company:',midcomp)
+}
+
+//20 remove first IT company from array
+const itCompanies_remove1st=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon','Deloitte','Cognizant']
+console.log('Array before first element is removed: ',itCompanies_remove1st)
+itCompanies_remove1st.shift()
+console.log('Array after first element is removed: ',itCompanies_remove1st)
+
+//21 middle IT company from array
+const itCompanies_removemid=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon','Deloitte','Cognizant']
+if (itCompanies_removemid.length%2==0) {
+    let mididx=itCompanies_removemid.length/2
+    console.log('IT Companies before Middle company removal:',itCompanies_removemid)
+    console.log('if loop Start index:',mididx)
+    const firsthalf=itCompanies_removemid.slice(0,mididx-1)
+    const lasthalf=itCompanies_removemid.slice(mididx+1,itCompanies_removemid.length)
+    const result=firsthalf.concat(lasthalf)
+    console.log('IT Companies after Middle company removal:',result)
+} else {
+    let mididx=Math.floor(itCompanies_removemid.length/2)
+    console.log('IT Companies before Middle company removal:',itCompanies_removemid)
+    console.log('else loop, Start index:',mididx)
+    const firsthalf=itCompanies_removemid.slice(0,mididx)
+    const lasthalf=itCompanies_removemid.slice(mididx+1,itCompanies_removemid.length)
+    const result=firsthalf.concat(lasthalf)
+    console.log('IT Companies after Middle company removal:',result)
+}
+
+//22 remove last IT company from array
+const itCompanies_removelst=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon','Deloitte','Cognizant']
+console.log('Array before last element is removed: ',itCompanies_removelst)
+itCompanies_removelst.pop()
+console.log('Array after last element is removed: ',itCompanies_removelst)
+
+//23 Remove all IT companies
+const itCompanies_org=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon','Deloitte','Cognizant']
+const itCompanies_remove=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon','Deloitte','Cognizant']
+// console.log('Array itCompanies before removing all elements:',itCompanies_remove)
+
+// console.log('Array itCompanies After removing all elements:',itCompanies_remove.splice())
+
+itCompanies_org.forEach(element => {
+    console.log(itCompanies_remove.pop())
+    
+});
+
+console.log(itCompanies_remove)
+
+//for myself additional exercise - to lowercase
+
+itCompanies_org.map(
+    Element=>{
+        console.log(`Company name ${Element} lower cased using map as:${Element.toLowerCase()}`)
+    }
+)
+//my for each method to print lowercase of each company name
+itCompanies_org.forEach(lowercase)
+
+function lowercase(ele) {
+    console.log(`Company name ${ele} lower cased using forEach as:${ele.toLowerCase()}`);
+}
