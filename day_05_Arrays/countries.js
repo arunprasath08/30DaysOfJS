@@ -41,6 +41,7 @@ export const countries = [
   'Congo',
   'Costa Rica',
   "Cote d'Ivoire",
+  'Ivory coast',
   'Croatia',
   'Cuba',
   'Cyprus',
